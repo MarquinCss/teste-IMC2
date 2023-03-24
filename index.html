@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculadora IMC</title>
+</head>
+<body>
+
+<br><br>
+<h1> Calculadora IMC </h1> 
+<div class="container">
+<div class="calc">
+<label for="peso">Peso (Kg):</label>
+
+<input placeholder="Exemplo:72" id="peso" name="peso" type="number"> 
+<br>
+<label for="altura">Altura:</label>
+<input placeholder="Exemplo:1.65" id="altura" name="altura" type="number" >
+<br>
+<button onclick="calcularImc()"> Calcular </button>
+<br>
+<p>Seu Índice de massa corporal é:<span id="resultado"></span></p>
+
+</div>
+</div>
+<br><br>
+<footer>
+     
+        <p>Desenvolvido em Html,Css e JS, Por Marco Marchi</p>
+         <p class="redes"> <a href="https://github.com/MarquinCss"> <i class="fa fa-github" aria-hidden="true"></i></a> 
+            
+            <a href="https://www.instagram.com/marcocarre29/"><i class="fa fa-instagram" aria-hidden="true"></i> </a>
+            
+            <a href="https://www.linkedin.com/in/marco-ant%C3%B4nio-marchi-carreiro-abb127260/"><i class="fa fa-linkedin" aria-hidden="true"></i></a></p>
+    </footer>
+
+<script>
+//function
+function calcularImc(){
+//var
+
+ const peso = document.getElementById('peso').value;
+ const altura = document.getElementById('altura').value;
+ const imc = peso / (altura **2)
+//frase
+
+document.getElementById('resultado').textContent = imc.toFixed(2) + ' e tá tudo bem!' ;}
+//mudar titulo quando sair da página
+let tituloDinamico = document.title;
+window.addEventListener("blur", () =>{
+    document.title = "Volta aqui!"
+
+});
+
+window.addEventListener("focus",()=>{
+document.title = tituloDinamico
+//ou "Obrigado por voltar"
+});
+
+
+
+
+
+</script>
+
+    
+</body>
+</html>
